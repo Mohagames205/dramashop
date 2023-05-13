@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root {
+    --yellow: #f6cd6c;
+    --cyan: #86d7ca;
+    --blue: #5484d3;
+    --dark-blue: #242b83;
+    --pink: #ea5887;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif
+}
+
+
+.title {
+    text-align: center;
+    border: solid 2px black;
+    font-size: 30px;
+}
+
+#sell-page {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+#reservation-container {
+    margin-top: 50px;
+}
+
+#sidebar .img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sidebar  {
+    background-color: var(--blue);
+    height: 100vh;
+    border-left: 10px solid var(--dark-blue);;
+}
+
+#bannersection {
+    color: var(--dark-blue);
+    background-color: var(--yellow);
+    padding: 20px;
+    font-size: 20px;
+    /*-webkit-text-stroke: 3px black;*/
+    text-shadow: rgba(0, 0, 0, 0.511) 1px 1px 1px;
+}
+
+
+input, label {
+    display: block;
+}
+
+.formcontrol div {
+    margin-bottom: 30px;
+}
+
+
+input {
+    margin-top: 5px;
+    min-width: 120px;
+    width: 50%;
+    padding: 8px 15px 8px 15px;
+    border-radius: 8px;
+}
+
+
+#designs {
+    padding: 50px 6vw 50px 6vw;
+}
+
+mark {
+    color: var(--dark-blue);
+    margin: 0 -0.4em;
+    padding: 0.1em 0.4em;
+    border-radius: 0.3em;
+    background: transparent;
+    background-color: rgba(255, 225, 0, 0.7);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+#designs h2 {
+
+    font-weight: 900;
+    color: var(--dark-blue);
+    text-shadow: var(--cyan) -3px -3px 1.5px, var(--cyan) -5px -5px 1.5px;
+    font-size: 60px;
+    text-align: center;
+}
+
+#bannersection h1 {
+    margin: 0;
+}
+
+.border-wrapper {
+    border-left: solid var(--pink) 15px;
+}
+
+.border-bottom-wrapper {
+    border-bottom: solid var(--yellow) 15px;
+}
+
+.design-item {
+    background-image: url("https://cdn.discordapp.com/attachments/1082616843468025897/1084828718905696327/image0.jpg");
+    background-size: contain;
+    height: 280px;
+    width: 280px;
+
+    min-height: 200px;
+    min-width: 200px;
+
+    border: var(--dark-blue) solid 6px;
+    border-top-right-radius: 4px;
+}
+
+
+.explain-request {
+    font-size: 40px;
+    color: var(--dark-blue);
+    font-weight: 800;
+}
+
+.personalise-banner {
+    font-size: 30px;
+    padding: 20px 30px 20px 30px;
+    font-weight: 800;
+    background-color: var(--yellow);
+    border: var(--dark-blue) solid 5px;
+    border-radius: 40px;
+    color: var(--dark-blue);
+
+    margin: 25px 0px 25px 0px;
+}
+
+.looks {
+    background-color: var(--pink);
+
+    border-top: var(--dark-blue) solid 5px;
+    border-bottom: var(--dark-blue) solid 5px;
+}
+
+#location {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+#location span {
+    font-size: 50px;
+}
+
+footer {
+    font-size: 2em;
+    color: var(--dark-blue);
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 100px 50px 100px;
+}
+
+#profilepic {
+    text-align: right;
+}
+
+
+#image-preview {
+    max-width: 100%; /* set max width to prevent image from overflowing */
+    height: auto; /* preserve aspect ratio */
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* align items vertically in the center */
+    grid-area: imgpreview;
+}
+
+#image-preview img {
+    border: var(--dark-blue) solid 6px;
+}
+
+
+#looks-title {
+    grid-area: titlebar;
+
+}
+
+#looks-title h2 {
+    background-color: white;
+    margin-top: 0;
+
+    padding: 15px;
+
+    font-size: 40px;
+    color: var(--dark-blue);
+    font-weight: 800;
+
+    border: var(--dark-blue) solid 6px;
+}
+
+#item-description {
+    grid-area: description;
+
+    color: var(--dark-blue);
+
+    background-color: white;
+    padding: 20px 50px 20px 50px;
+
+    border: var(--dark-blue) solid 6px;
+
+    font-size: 30px;
+}
+
+hr {
+    display: none;
+}
+
