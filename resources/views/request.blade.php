@@ -19,15 +19,31 @@
 
 </head>
 <body class="bg-gray-200">
-<div id="bannersection">
-    <h1 class="text-4xl">Bestelling</h1>
+<div id="bannershadow" class="p-5 bg-[--yellow]">
+    <h1 class="text-4xl text-[--dark-blue]">Bestelling</h1>
 </div>
 
-<div id="sell-page">
+<div class="grid md:grid-cols-5">
 
-    <div id="reservation-container" class="px-10">
 
-        <div class="bg-gray-100 rounded-lg shadow p-10 border-4" style="border-color: var(--dark-blue);">
+    <div id="sidebar" class="text-center md:col-span-2 border-l-8 border-[--dark-blue] bg-[--blue] md:h-screen md:order-last">
+        <div class="flex justify-center mt-20">
+            <img src="/products/{{ $product->image }}" class="rounded-lg w-1/2">
+        </div>
+        <div class="p-5 border-b border-blue-400">
+            <p class="text-gray-300 text-sm"> T-shirtkeuze </p>
+            <p class="text-2xl text-white"> {{ $product->name }} </p>
+        </div>
+
+        <div class="p-5 border-b border-blue-400">
+            <p class="text-gray-300 text-sm"> Prijs </p>
+            <p class="text-2xl text-white"> €{{ $product->price }} </p>
+        </div>
+    </div>
+
+    <div id="reservation-container" class="md:px-10 px-5 md:col-span-3">
+
+        <div class="bg-gray-100 rounded-lg shadow p-10 border-4 border-[--dark-blue]">
             <h3 class="text-2xl">Reserveren</h3>
             <ul class="list-disc list-inside">
                 <li>Je reserveert je favoriete T-Shirt.</li>
@@ -81,21 +97,7 @@
         </div>
     </div>
 
-    <div id="sidebar" class="text-center">
-        <div class="img-container my-10">
-            <div class="design-item rounded-lg" style="background-image: url('/products/{{ $product->image }}')"></div>
-        </div>
-        <div class="p-3 border-b border-blue-400">
-            <p class="text-gray-300 text-sm"> T-shirtkeuze </p>
-            <p class="text-lg text-white"> {{ $product->name }} </p>
-        </div>
 
-
-        <div class="p-3 border-b border-blue-400">
-            <p class="text-gray-300 text-sm"> Prijs </p>
-            <p class="text-lg text-white"> €{{ $product->price }} </p>
-        </div>
-    </div>
 
 
 
