@@ -89,36 +89,36 @@
                                 <div class="md:col-span-3">
                                     <div class="p-4">
                                         <h2 class="text-xl my-5">Details</h2>
-                                            <div class="flex flex-wrap justify-between mt-3 gap-4">
-                                                <div class="basis-5/12">
+                                            <div class="md:flex flex-wrap justify-between mt-3 gap-4">
+                                                <div class="basis-5/12 mt-4">
                                                     <x-input-label for="name" value="Naam" />
                                                     <x-text-input id="name" name="name" type="text" value="{{ $request->name }}" class="block w-full cursor-not-allowed" readonly />
                                                     <x-input-error class="mt-2" :messages="$errors->get('name')" />
                                                 </div>
 
-                                                <div class="basis-6/12">
+                                                <div class="basis-6/12 mt-4">
                                                     <x-input-label for="email" value="E-mail"/>
                                                     <x-text-input id="email" name="email" type="email" value="{{ $request->email }}" class="block w-full cursor-not-allowed" readonly />
                                                 </div>
 
-                                                <div class="basis-8/12">
+                                                <div class="basis-8/12 mt-4">
                                                     <x-input-label for="adress" value="Adres"/>
                                                     <x-text-input id="adress" name="adress" type="text" value="{{ $request->address }}" class="block w-full cursor-not-allowed" readonly />
                                                 </div>
 
-                                                <div class="basis-1/5">
+                                                <div class="basis-1/5 mt-4">
                                                     <x-input-label for="postal" value="Postcode"/>
                                                     <x-text-input id="postal" name="postal" type="number" value="{{ $request->postal }}" class="block w-full cursor-not-allowed" readonly />
                                                 </div>
 
-                                                <div class="basis-full">
+                                                <div class="basis-full mt-4">
 
                                                     <x-input-label for="tracking" value="Trackinglink"/>
                                                     <x-text-input id="tracking" name="tracking" type="text" value="{{ url('/tracking/' . $request->unique_identifier) }}" class="block w-full cursor-not-allowed" readonly />
                                                     <x-secondary-button x-on:click="copyToClipboard()" x-data="" class="mt-3 float-right">Kopiëren </x-secondary-button>
                                                 </div>
 
-                                                <div class="basis-full">
+                                                <div class="basis-full mt-4">
                                                     <x-input-label for="notes" value="Opmerkingen"/>
                                                     <x-text-input id="notes" name="adress" type="text" value="{{ $request->notes }}" class="block w-full cursor-not-allowed" readonly />
                                                 </div>
