@@ -23,11 +23,6 @@ body {
     font-size: 30px;
 }
 
-#sell-page {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
-
 #reservation-container {
     margin-top: 50px;
 }
@@ -39,17 +34,9 @@ body {
 }
 
 #sidebar  {
-    background-color: var(--blue);
-    height: 100vh;
-    border-left: 10px solid var(--dark-blue);;
 }
 
-#bannersection {
-    color: var(--dark-blue);
-    background-color: var(--yellow);
-    padding: 20px;
-    font-size: 20px;
-    /*-webkit-text-stroke: 3px black;*/
+#bannershadow {
     text-shadow: rgba(0, 0, 0, 0.511) 1px 1px 1px;
 }
 
@@ -107,20 +94,6 @@ mark {
 .border-bottom-wrapper {
     border-bottom: solid var(--yellow) 15px;
 }
-
-.design-item {
-    background-image: url("https://cdn.discordapp.com/attachments/1082616843468025897/1084828718905696327/image0.jpg");
-    background-size: contain;
-    height: 280px;
-    width: 280px;
-
-    min-height: 200px;
-    min-width: 200px;
-
-    border: var(--dark-blue) solid 6px;
-    border-top-right-radius: 4px;
-}
-
 
 .explain-request {
     font-size: 40px;
