@@ -83,10 +83,10 @@
                             >{{ __('Opgeslagen.') }}</p>
                         @endif
 
-                        <div class="grid grid-cols-5 grid-rows-2 gap-10">
+                        <div class="grid sm:grid-cols-none md:grid-cols-5 md:grid-rows-2 sm:grid-rows-none gap-10 ">
 
 
-                                <div class="col-span-3">
+                                <div class="md:col-span-3">
                                     <div class="p-4">
                                         <h2 class="text-xl my-5">Details</h2>
                                             <div class="flex flex-wrap justify-between mt-3 gap-4">
@@ -127,7 +127,7 @@
                                 </div>
 
 
-                            <div class="col-span-2">
+                            <div class="md:col-span-2">
                                 <div class="p-6 flex justify-center">
                                     <div class="flex flex-col items-center">
                                         <img src="/products/{{ $request->product->image }}" class="w-3/4 text-center rounded-lg border border-gray-700 shadow"><br>
@@ -138,7 +138,7 @@
 
 
 
-                            <div class="col-span-3 row-span-1">
+                            <div class="md:col-span-3 md:row-span-1">
                                 <div class="button-container px-8 tracking-tight">
                                     <div class="p-10 border border-gray-700 rounded-lg shadow space-y-5">
 
@@ -178,7 +178,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-span-2">
+                            <div class="md:col-span-2">
                                 <div class="details-container px-8 tracking-tight">
                                     <div class="details p-10 border border-gray-700 rounded-lg shadow space-y-2">
 
