@@ -27,8 +27,8 @@
 
 
     <div id="sidebar" class="text-center md:col-span-2 border-l-8 border-[--dark-blue] bg-[--blue] md:h-screen md:order-last">
-        <div class="flex justify-center mt-20">
-            <img src="/products/{{ $product->image }}" class="rounded-lg w-1/2">
+        <div class="flex justify-center my-20">
+            <img src="/products/{{ $product->image }}" class="rounded-lg w-1/2 border-8 border-[--dark-blue]">
         </div>
         <div class="p-5 border-b border-blue-400">
             <p class="text-gray-300 text-sm"> T-shirtkeuze </p>
@@ -57,20 +57,19 @@
 
                 <div>
                     <label for="name">Volledige naam</label>
-                    <input type="text" name="name" id="name" class="rounded-lg shadow-sm border-gray-300" required autofocus>
-
+                    <input type="text" name="name" id="name" class="rounded-lg shadow-sm border-gray-300 w-full md:w-1/2" required autofocus>
                 </div>
                 <div>
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" class="rounded-lg shadow-sm border-gray-300" required autofocus>
+                    <input type="email" name="email" id="email" class="rounded-lg shadow-sm border-gray-300 w-full md:w-1/2" required autofocus>
                 </div>
                 <div>
                     <label for="address">Straatnaam en nummer</label>
-                    <input type="text" name="address" id="address" class="rounded-lg shadow-sm border-gray-300" required>
+                    <input type="text" name="address" id="address" class="rounded-lg shadow-sm border-gray-300 w-full md:w-1/2" required>
                 </div>
                 <div>
                     <label for="postal">Postcode</label>
-                    <input type="number" name="postal" id="postal" class="rounded-lg shadow-sm border-gray-300" required>
+                    <input type="number" name="postal" id="postal" class="rounded-lg shadow-sm border-gray-300 w-full md:w-1/2" required>
                 </div>
                 <div>
                     <label for="size">Kledingmaat</label>
@@ -86,7 +85,7 @@
 
                 <div>
                     <label for="notes">Opmerkingen</label>
-                    <input type="text" name="notes" id="notes" class="rounded-lg shadow-sm border-gray-300">
+                    <input type="text" name="notes" id="notes" class="rounded-lg shadow-sm border-gray-300 w-full md:w-1/2">
                 </div>
                 <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Reserveer nu

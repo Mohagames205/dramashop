@@ -98,36 +98,36 @@
                                 >{{ __('Opgeslagen.') }}</p>
                             @endif
 
-                            <div class="grid grid-cols-5 grid-rows-2 gap-10">
+                            <div class="grid sm:grid-cols-none md:grid-cols-5 md:grid-rows-2 sm:grid-rows-none gap-10">
 
 
-                                <div class="col-span-3">
+                                <div class="md:col-span-3">
                                     <div class="p-4">
                                         <h2 class="text-xl">Details</h2>
                                         <p class="mb-5 text-gray-400 tracking-tight">U kan de details op dit moment niet aanpassen.</p>
-                                        <div class="flex flex-wrap justify-between mt-3 gap-4">
-                                            <div class="basis-5/12">
+                                        <div class="md:flex flex-wrap justify-between mt-3 gap-4">
+                                            <div class="basis-5/12 mt-4">
                                                 <x-input-label for="name" value="Naam" />
                                                 <x-text-input id="name" name="name" type="text" value="{{ $request->name }}" class="block w-full cursor-not-allowed" readonly />
                                                 <x-input-error class="mt-2" :messages="$errors->get('name')" />
                                             </div>
 
-                                            <div class="basis-6/12">
+                                            <div class="basis-6/12 mt-4">
                                                 <x-input-label for="email" value="E-mail"/>
                                                 <x-text-input id="email" name="email" type="email" value="{{ $request->email }}" class="block w-full cursor-not-allowed" readonly />
                                             </div>
 
-                                            <div class="basis-8/12">
+                                            <div class="basis-8/12 mt-4">
                                                 <x-input-label for="adress" value="Adres"/>
                                                 <x-text-input id="adress" name="adress" type="text" value="{{ $request->address }}" class="block w-full cursor-not-allowed" readonly />
                                             </div>
 
-                                            <div class="basis-1/5">
+                                            <div class="basis-1/5 mt-4">
                                                 <x-input-label for="postal" value="Postcode"/>
                                                 <x-text-input id="postal" name="postal" type="number" value="{{ $request->postal }}" class="block w-full cursor-not-allowed" readonly />
                                             </div>
 
-                                            <div class="basis-full">
+                                            <div class="basis-full mt-4">
                                                 <x-input-label for="notes" value="Opmerkingen"/>
                                                 <x-text-input id="notes" name="adress" type="text" value="{{ $request->notes }}" class="block w-full cursor-not-allowed" readonly />
                                             </div>
@@ -136,7 +136,7 @@
                                 </div>
 
 
-                                <div class="col-span-2">
+                                <div class="md:col-span-2">
                                     <div class="p-6 flex justify-center">
                                         <div class="flex flex-col items-center">
                                             <img src="/products/{{ $request->product->image }}" class="w-3/4 text-center rounded-lg border border-gray-700 shadow"><br>
@@ -146,7 +146,7 @@
 
 
 
-                                <div class="col-span-3 row-span-1">
+                                <div class="md:col-span-3 md:row-span-1">
                                     <div class="button-container px-8 tracking-tight">
                                         <div class="p-10 border border-gray-700 rounded-lg shadow space-y-5">
 
@@ -177,7 +177,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-span-2">
+                                <div class="md:col-span-2">
                                     <div class="details-container px-8 tracking-tight">
                                         <div class="details p-10 border border-gray-700 rounded-lg shadow space-y-2">
 

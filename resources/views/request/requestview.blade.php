@@ -212,9 +212,9 @@
 
 
     <script>
-        function copyToClipboard() {
+        function copyToClipboard(id) {
             // Get the text field
-            var copyText = document.getElementById("tracking");
+            var copyText = document.getElementById(id);
 
             // Select the text field
             copyText.select();
