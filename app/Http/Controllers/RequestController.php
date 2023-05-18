@@ -13,6 +13,13 @@ class RequestController extends Controller
 {
 
 
+    public function index(Request $request) {
+        $id = $request->id;
+        $requestModel = \App\Models\Request::findOrFail($id);
+
+        return view("request.requestview", ["request" => $requestModel]);
+    }
+
     public function create(Request $request) {
 
         $validated = $request->validate([

@@ -62,9 +62,7 @@ Route::middleware('auth')->group(function () {
         return view("requests");
     })->name("requests");
 
-    Route::get("/requestview/{id}", function (int $id) {
-        return view("request.requestview", ["request" => \App\Models\Request::find($id)]);
-    });
+    Route::get("/requestview/{id}", [RequestController::class, "index"]);
 
     Route::delete("/requestview/{id}", [RequestController::class, "delete"])->name("request.delete");
 
