@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('order_logs', function (Blueprint $table) {
             $table->id();
+            $table->integer("admin_id")->nullable();
+            $table->integer("request_id");
+            $table->integer("action");
             $table->timestamps();
         });
     }

@@ -26,12 +26,9 @@ class ProductController extends Controller
 
         $request->image->move(public_path('products'), $name);
 
-
         Product::create($validated);
 
         return to_route("products");
-
-
     }
 
     public function delete(Request $request) {

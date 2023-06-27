@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Enums\LogAction;
 use App\Enums\Status;
+use App\Models\OrderLog;
 use App\Models\Product;
 use Illuminate\Contracts\Support\MessageProvider;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -41,7 +43,12 @@ class RequestController extends Controller
         $product->orders_placed++;
         $product->save();
 
-        \App\Models\Request::create($validated);
+        $requestModel = \App\Models\Request::create($validated);
+
+        $log = new OrderLog();
+        $log->request_id = $requestModel->id;
+        $log->action = LogAction::CREATED_RESERVATION;
+        $log->save();
 
 
         return redirect("/tracking/" . $uid);
@@ -64,10 +71,15 @@ class RequestController extends Controller
 
 
         if($request->get("refill_stock") !== null && $requestModel->product->orders_placed > 0) {
-            #TODO enkel als in een bepaalde faze
             $requestModel->product->orders_placed--;
             $requestModel->product->save();
         }
+
+        $log = new OrderLog();
+        $log->admin_id = auth()->user()->id;
+        $log->request_id = $requestModel->id;
+        $log->action = LogAction::DELETED_RESERVATION;
+        $log->save();
 
         $requestModel->delete();
         return to_route("requests");
@@ -78,13 +90,18 @@ class RequestController extends Controller
 
 
         if($request->status < 1 && $requestModel->product->orders_placed > 0) {
-            #TODO enkel als in een bepaalde faze
             $requestModel->product->orders_placed--;
             $requestModel->product->save();
         }
 
+        $log = new OrderLog();
+        $log->request_id = $requestModel->id;
 
         $requestModel->delete();
+
+        $log->action = LogAction::CREATED_RESERVATION;
+        $log->save();
+
         return to_route("home")->with("success", "Uw aanvraag is succesvol verwijderd!");
     }
 
