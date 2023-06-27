@@ -72,7 +72,7 @@
                                     </h2>
 
                                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                                        {{ __('Een aanvraag verwijderen kan ernstige gevolgen hebben! Je zal de persoon zelf moeten inlichten over de annulatie van de aanvraag.') }}
+                                        {{ __('Door je aanvraag te verwijderen zal je reservatie vervallen. ') }}
                                     </p>
 
 

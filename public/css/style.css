@@ -23,6 +23,16 @@ body {
     font-size: 30px;
 }
 
+.authenticate {
+    padding: 20px;
+    background-color: #242b83;
+    color: white;
+    text-align: right;
+}
+
+.authenticate > a:visited {
+    color: white;
+}
 
 #bannersection {
     color: var(--dark-blue);

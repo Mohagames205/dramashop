@@ -29,6 +29,15 @@
 
 </head>
 <body>
+
+@if(auth()->user())
+
+    <div class="authenticate">
+        <a href="{{ route("dashboard") }}">Ga naar beheer</a>
+    </div>
+
+@endif
+
 <div id="bannersection">
     <b><h1>Dramatic<br>T-shirts</h1></b>
 </div>
@@ -117,6 +126,10 @@
         </div>
     </div>
 </footer>
+<div>
+    <a href="/login">Inloggen</a>
+</div>
+
 
 </body>
 
