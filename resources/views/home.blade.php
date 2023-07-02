@@ -45,7 +45,7 @@
     <div id="design-list">
 
 
-        @foreach(\App\Models\Product::all() as $product)
+        @foreach(\App\Models\Product::all()->sortBy(function ($model) { return !$model->is_available || $model->orders_placed >= $model->max_amount; } ) as $product)
 
             <a @if($product->is_available && $product->orders_placed < $product->max_amount) href="/request/{{ $product->id }}" @else onclick="sendAlert('Dit design is (tijdelijk) niet meer beschikbaar!')  @endif ">
                 <div class="wrap-item @if(!$product->is_available || $product->orders_placed >= $product->max_amount) sold @endif" title="{{ $product->name }}">
