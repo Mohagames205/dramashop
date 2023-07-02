@@ -19,7 +19,10 @@ return new class extends Migration
             $table->text("email");
             $table->text("address");
             $table->unsignedInteger("postal");
-            $table->integer("product_id");
+            $table->foreignId("product_id")
+                ->references("id")
+                ->on("products")
+                ->onDelete("cascade");
             $table->enum("size", ["XS", "S", "M", "L", "XL", "XXL"]);
             $table->integer("status")->default(0);
             $table->string("notes")->nullable();
