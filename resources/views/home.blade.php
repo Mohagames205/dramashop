@@ -83,10 +83,10 @@
 <!-- Dynamic -->
 <div class="looks">
     <div id="looks-title"><h2>Hoe ziet het er uit?</h2></div>
-    <div class="img-container"> <div id="image-preview"><img src="https://placehold.co/400x600" height="50%"></div></div>
+    <div class="img-container"> <div id="image-preview"><img src="https://media.discordapp.net/attachments/1082616843468025897/1121788462228590723/IMG_3094.jpg?width=669&height=671" height="50%"></div></div>
     <div id="item-description">
         <p>Maten: XS - XXL</p>
-        <p>Prijs: 20€</p>
+        <p>Prijs: € 15,00</p>
 
     </div>
 </div>
