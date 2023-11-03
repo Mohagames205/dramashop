@@ -1,0 +1,68 @@
+version: '3'
+services:
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: digitalocean.com/php
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./.docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    restart: unless-stopped
+    tty: true
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.drama.entrypoints=web,websecure"
+      - "traefik.http.routers.drama.rule=Host(`drama.mootje.be`)"
+      - "traefik.http.routers.drama.tls=true"
+      - "traefik.http.services.drama.loadbalancer.server.port=80"
+    # define the port to which traefik should redirect all the traffic (only needed when using multiple ports)
+    # - "traefik.http.services.voxum.loadbalancer.server.port=80"
+    volumes:
+      - ./:/var/www
+      - ./.docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+      - traefik_default
+
+  #MySQL Service
+  db:
+    image: mariadb
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306"
+    environment:
+      MYSQL_DATABASE: elmo
+      MYSQL_ROOT_PASSWORD: thepassword
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql/
+      - ./.docker/mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+  traefik_default:
+    external: true
+#Volumes
+volumes:
+  dbdata:
+    driver: local
